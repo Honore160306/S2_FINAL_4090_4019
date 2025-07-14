@@ -32,6 +32,16 @@ while ($row = mysqli_fetch_assoc($resultObjets)) {
 <head>
     <meta charset="UTF-8">
     <title>Fiche du membre</title>
+      <style>
+        body { background: #f8f9fa; font-family: Arial, sans-serif; }
+        table { margin: 40px auto; border-collapse: collapse; width: 80%; background: #fff; }
+        th, td { padding: 10px 15px; border: 1px solid #ccc; text-align: center; }
+        th { background: #e3e3e3; color: #333; }
+        img { border-radius: 8px; }
+        h1, h2, h3 { color: cadetblue; }
+        form { margin: 20px auto; width: 60%; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
+        input, select, button { margin: 5px 0; padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; }
+    </style>
 </head>
 <body>
     <h1>Information du membre</h1>

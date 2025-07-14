@@ -2,6 +2,12 @@ CREATE DATABASE finalProject;
 USE finalProject;
 
 -- Table des membres
+DROP TABLE emprunts_membre;
+DROP TABLE emprunts_categorie_objet;
+DROP TABLE emprunts_objet;
+DROP TABLE emprunts_images_objet;
+DROP TABLE emprunts_emprunt;
+
 CREATE TABLE emprunts_membre (
     id_membre INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100),

@@ -1,0 +1,30 @@
+- Création du formulaire de connexion et d'inscription (ETU4019) : 
+  > Page formulaire.php avec champs email, mot de passe, nom, genre, date de naissance, ville.
+  > Deux formulaires : un pour connexion, un pour inscription.
+  > Envoi vers traitementLog.php et traitementInc.php.
+
+- Ajout d’un style simple et cohérent sur toutes les pages (ETU4090) :
+  > Bloc <style> dans chaque <head> avec couleurs, marges, polices, tableau centré, boutons arrondis.
+  > Uniformisation de l’apparence des formulaires et tableaux.
+
+- Affichage de la fiche d’un objet (ETU4090) :
+  > Page ficheObjet.php.
+  > Récupération de l’objet via $_GET['nomObjet'].
+  > Affichage des détails : nom, date emprunt, date retour, catégorie, image.
+
+- Liste des objets avec lien vers fiche (ETU4019) :
+  > Page listeObjet.php.
+  > Tableau listant tous les objets.
+  > Chaque nom d’objet est un lien vers ficheObjet.php.
+  > Ajout d’un formulaire pour filtrer par catégorie.
+
+- Recherche d’objets par catégorie ou nom (ETU4090) :
+  > Page resultatRecherche.php.
+  > Formulaire de recherche sur listeObjet.php.
+  > Affichage des résultats filtrés par catégorie et/ou nom.
+
+- Fiche membre avec objets empruntés regroupés par catégorie (ETU4019) :
+  > Page ficheMembre.php.
+  > Affichage des infos du membre connecté.
+  > Tableau des objets empruntés, regroupés par catégorie.
+  > Message si aucun objet emprunté ou membre non trouvé.

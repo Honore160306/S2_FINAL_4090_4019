@@ -19,9 +19,16 @@ $getCategorie = getCategorie();
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css">
     <script src="../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body { background: #f8f9fa; font-family: Arial, sans-serif; }
+        table { margin: 40px auto; border-collapse: collapse; width: 80%; background: #fff; }
+        th, td { padding: 10px 15px; border: 1px solid #ccc; text-align: center; }
+        th { background: #e3e3e3; color: #333; }
+    </style>
 </head>
 
 <body>
+    <h2 style="color: cadetblue">Filtrer</h2>
     <form action="objetCategorie.php" method="POST">
         <select name="categorie">
             <?php while ($row = mysqli_fetch_assoc($getCategorie)) { ?>
