@@ -1,3 +1,6 @@
+CREATE DATABASE finalProject;
+USE finalProject;
+
 -- Table des membres
 CREATE TABLE emprunts_membre (
     id_membre INT AUTO_INCREMENT PRIMARY KEY,
@@ -65,13 +68,13 @@ INSERT INTO emprunts_objet (nom_objet, id_categorie, id_membre) VALUES
 ('Sèche-cheveux', 1, 1),
 ('Perceuse', 2, 1),
 ('Clé à molette', 3, 1),
-('Mixeur', 4, 1),
-('Lisseur', 1, 1),
-('Tournevis', 2, 1),
-('Cric', 3, 1),
-('Blender', 4, 1),
-('Pince à épiler', 1, 1),
-('Scie', 2, 1);
+('Mixeur', 4, 2),
+('Lisseur', 1, 2),
+('Tournevis', 2, 2),
+('Cric', 3, 3),
+('Blender', 4, 3),
+('Pince à épiler', 1, 4),
+('Scie', 2, 4);
 
 -- Emprunts (emprunts_membre 1 emprunte un emprunts_objet du emprunts_membre 2, etc.)
 INSERT INTO emprunts_emprunt (id_objet, id_membre, date_emprunt, date_retour) VALUES

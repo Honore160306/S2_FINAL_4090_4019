@@ -23,4 +23,26 @@
         $result=mysqli_query(dbconnect(), $query);
         return $result;
     }
+
+    function getIdMembre($email, $mdp){
+        $query = "SELECT id_membre FROM emprunts_membre WHERE email='$email' AND motDePasse='$mdp'";
+        $result = mysqli_query(dbconnect(), $query);
+        $row = mysqli_fetch_assoc($result);
+        return $row['id_membre'];
+    }
+
+    function insertPublication($nomObjet, $categorie, $idMembre, $nomImage){
+        $query = sprintf("INSERT INTO `emprunts_objet` (`nom_objet`, `id_categorie`, `id_membre`) VALUES ('%s', '%d', '%d')",
+        $nomObjet,
+        (int)$categorie,
+        $idMembre
+        );
+        mysqli_query(dbconnect(), $query);
+
+        $query = sprintf("INSERT INTO `emprunts_images_objet` (`id_objet`, `nom_image`) VALUES ('%s', '%d', '%d')",
+        1,
+        $nomImage
+        );
+        mysqli_query(dbconnect(), $query);
+    }
     ?>
