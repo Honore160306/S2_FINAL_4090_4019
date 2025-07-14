@@ -1,8 +1,3 @@
-Create DATABASE finalProject;
-USE finalProject;
-
--- Créer la base de données
-
 -- Table des membres
 CREATE TABLE emprunts_membre (
     id_membre INT AUTO_INCREMENT PRIMARY KEY,
