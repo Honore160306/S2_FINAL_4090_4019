@@ -61,12 +61,19 @@ while ($row = mysqli_fetch_assoc($resultObjets)) {
                         <th>Nom de l'objet</th>
                         <th>Date d'emprunt</th>
                         <th>Date de retour</th>
+                        <th>Action</th>
                     </tr>
                     <?php foreach ($objets as $obj) { ?>
                     <tr>
                         <td><?= $obj['nom_objet'] ?></td>
                         <td><?= $obj['date_emprunt'] ?></td>
                         <td><?= $obj['date_retour'] ?></td>
+                        <td>
+                            <form method="post" action="retourEmprunt.php" style="margin:0;">
+                                <input type="hidden" name="id_objet" value="<?= $obj['id_objet'] ?>">
+                                <button type="submit">Retour</button>
+                            </form>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>

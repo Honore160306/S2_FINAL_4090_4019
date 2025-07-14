@@ -56,7 +56,8 @@ $getCategorie = getCategorie();
     <hr>
     <h2 style="color: cadetblue">Fiche du Membre</h2>
     <aside>
-        <a href="ficheMembre.php">Fiche du Membre</a>
+        <a href="ficheMembre.php">Fiche du Membre</a> |
+        <a href="listeRetours.php">Liste des retours</a>
     </aside>
     <hr>
     

@@ -54,6 +54,16 @@ CREATE TABLE emprunts_emprunt (
     FOREIGN KEY (id_membre) REFERENCES emprunts_membre(id_membre)
 );
 
+-- Table: emprunts_etat_emprunt
+CREATE TABLE emprunts_etat_emprunt (
+    id_etat INT AUTO_INCREMENT PRIMARY KEY,
+    id_objet INT NOT NULL,
+    id_membre INT NOT NULL,
+    FOREIGN KEY (id_objet) REFERENCES emprunts_objet(id_objet),
+    FOREIGN KEY (id_membre) REFERENCES emprunts_membre(id_membre)
+);
+
+
 
 -- Membres
 INSERT INTO emprunts_membre (nom, date_naissance, genre, email, ville, mdp, image_profil) VALUES

@@ -1,3 +1,4 @@
+
 <?php
     require("connection.php");
     function insertInc($nom, $date_naissance, $genre, $email, $ville, $mdp){
@@ -63,4 +64,26 @@
             WHERE id_objet=$idObjet";
             mysqli_query(dbconnect(), $query);
         }
+
+    function supprimerEmprunt($id_objet) {
+        $query = "DELETE FROM emprunts_emprunt WHERE id_objet = " . intval($id_objet);
+        mysqli_query(dbconnect(), $query);
+    }
+
+    function enregistrerEtatRetour($id_objet, $id_membre, $etat) {
+        $id_objet = intval($id_objet);
+        $id_membre = intval($id_membre);
+        $etat = ($etat === 'abimer') ? 'abimer' : 'ok';
+        $query = "INSERT INTO emprunts_etat_emprunt (id_objet, id_membre, etat) VALUES ($id_objet, $id_membre, '$etat')";
+        mysqli_query(dbconnect(), $query);
+    }
+
+    function getAllRetours() {
+        $query = "SELECT e.id_etat, o.nom_objet, m.nom AS nom_membre, e.etat, e.date_retour
+              FROM emprunts_etat_emprunt e
+              INNER JOIN emprunts_objet o ON e.id_objet = o.id_objet
+              INNER JOIN emprunts_membre m ON e.id_membre = m.id_membre
+              ORDER BY e.date_retour DESC";
+        return mysqli_query(dbconnect(), $query);
+    }
     ?>
