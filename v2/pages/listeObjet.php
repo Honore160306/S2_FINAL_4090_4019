@@ -42,6 +42,19 @@ $getCategorie = getCategorie();
     </form>
     <hr>
     <br>
+    
+    <aside>
+        <a href="ficheMembre.php">Fiche du Membre</a>
+    </aside>
+
+    <h1 style="color: cadetblue">Recherche</h1>
+    <form action="resultatRecherche.php" method="POST">
+        <p>Categorie:<input type="text" name="rechercheCategorie" placeholder="categorie"></p>
+        <p>Objet:<input type="text" name="rechercheObjet" placeholder="objet"></p>
+        <button type="submit">Rechercher</button>
+
+    <br>
+    <br>
 
     <table border="2px solid black">
         <tr>

@@ -45,4 +45,15 @@
         );
         mysqli_query(dbconnect(), $query);
     }
+
+       function getRecherche($rechercheCategorie, $rechercheObjet){
+        $query= "SELECT * FROM emprunts_objet obj
+        INNER JOIN emprunts_emprunt emp ON obj.id_objet = emp.id_objet
+        INNER JOIN emprunts_categorie_objet catObj ON obj.id_categorie = catObj.id_categorie
+        INNER JOIN emprunts_images_objet imgObj ON obj.id_objet = imgObj.id_objet
+        WHERE catObj.nom_categorie LIKE '%$rechercheCategorie%' AND obj.nom_objet LIKE '%$rechercheObjet%'
+        ";
+        $result=mysqli_query(dbconnect(), $query);
+        return $result;
+    }
     ?>
