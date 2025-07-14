@@ -91,3 +91,16 @@ INSERT INTO emprunts_emprunt (id_objet, id_membre, date_emprunt, date_retour) VA
 (9, 1, '2025-07-09', '2025-07-14'),
 (10, 2, '2025-07-10', '2025-07-15');
 
+-- Images des objets
+INSERT INTO emprunts_images_objet (id_objet, nom_image) VALUES
+(1, 'WEB_D373E _BaByliss_Cordkeeper_2000_Hairdryer_3.jpg'),
+(2, 'perceuse-electrique-280w-220v-10mm-avec-led-.jpg'),
+(3, 'cle-a-molette-15-virax-017015.jpg'),
+(4, 'ariete-585-nero-part-tazza-piedini-a4703113be01a382a2a2ad472c55cf80.jpg'),
+(5, 'VR039297_0.jpg'),
+(6, 'media.webp'),
+(7, 'cric-a-bouteille-30t-worksite.jpg'),
+(8, 'trust-blender-15l-plastique-300w-tb-pn2876b.jpg'),
+(9, '300005.jpg'),
+(10, '712091_01_P_WE_8_Turbo_Cut_Fuchsschwanz_450_WZ_jpg_1280x1280.jpg');
+

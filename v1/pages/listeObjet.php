@@ -30,13 +30,16 @@ $getCategorie=getCategorie();
         </select>
         <button type="submit">Valider</button>
     </form>
-
-    <table>
+    
+    <br>
+    <br>
+    <table border="2px solid black">
         <tr>
             <th>Nom Objet</th>
             <th>Date emprunt</th>
             <th>Date retour</th>
             <th>Categorie</th>
+            <th>Image</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($getObjet)) { ?>
         <tr>
@@ -44,6 +47,7 @@ $getCategorie=getCategorie();
             <td><?= $row['date_emprunt'] ?></td>
             <td><?= $row['date_retour'] ?></td>
             <td><?= $row['nom_categorie'] ?></td>
+            <td><img src="../assets/images/<?= $row['nom_image'] ?>" alt="" width="10%" style="margin-left:560px"></td>
         </tr>
         <?php } ?>
 

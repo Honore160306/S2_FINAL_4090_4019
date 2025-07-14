@@ -19,11 +19,15 @@ $getObjet=getObjet();
 
 <body>
     <h2><?= $_POST['categorie'] ?></h2>
-    <table>
+
+    <br>
+    <br>
+    <table border="2px solid black">
         <tr>
             <th>Nom Objet</th>
             <th>Date emprunt</th>
             <th>Date retour</th>
+            <th>Image</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($getObjet)) { ?>
     <?php if($_POST['categorie']==$row['nom_categorie']){?>
@@ -31,6 +35,8 @@ $getObjet=getObjet();
             <td><?= $row['nom_objet'] ?></td>
             <td><?= $row['date_emprunt'] ?></td>
             <td><?= $row['date_retour'] ?></td>
+            <td><img src="../assets/images/<?= $row['nom_image'] ?>" alt="" width="10%" style="margin-left:560px"></td>
+
         </tr>
         <?php } 
     } ?>
