@@ -10,19 +10,16 @@
     function getObjet(){
         $query="SELECT * 
         FROM emprunts_objet obj
-        INNER JOIN emprunts_emprunt emp ON obj.id_objet = emp.id_objet";
+        INNER JOIN emprunts_emprunt emp ON obj.id_objet = emp.id_objet
+        INNER JOIN emprunts_categorie_objet catObj ON obj.id_categorie = catObj.id_categorie
+        ";
         $result=mysqli_query(dbconnect(), $query);
         return $result;
     }
 
-
-      function getObjetCategorie(){
-        $query="SELECT * 
-        FROM emprunts_objet obj
-        INNER JOIN emprunts_categorie_objet catObj ON obj.id_categorie = catObj.id_categorie";
+    function getCategorie(){
+        $query="SELECT * FROM emprunts_categorie_objet";
         $result=mysqli_query(dbconnect(), $query);
         return $result;
     }
-
-
     ?>

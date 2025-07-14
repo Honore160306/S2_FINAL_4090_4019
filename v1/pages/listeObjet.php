@@ -6,6 +6,7 @@ $email = $_SESSION['email'];
 $mdp = $_SESSION['mdp'];
 
 $getObjet=getObjet();
+$getCategorie=getCategorie();
 ?>
 
 <!DOCTYPE html>
@@ -21,17 +22,28 @@ $getObjet=getObjet();
 </head>
 
 <body>
+    <form action="objetCategorie.php" method="POST">
+        <select name="categorie" >
+            <?php while ($row = mysqli_fetch_assoc($getCategorie)) { ?>
+            <option value="<?= $row['nom_categorie'] ?>" ><?= $row['nom_categorie'] ?></option>
+            <?php } ?>
+        </select>
+        <button type="submit">Valider</button>
+    </form>
+
     <table>
         <tr>
             <th>Nom Objet</th>
             <th>Date emprunt</th>
             <th>Date retour</th>
+            <th>Categorie</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($getObjet)) { ?>
         <tr>
             <td><?= $row['nom_objet'] ?></td>
             <td><?= $row['date_emprunt'] ?></td>
             <td><?= $row['date_retour'] ?></td>
+            <td><?= $row['nom_categorie'] ?></td>
         </tr>
         <?php } ?>
 
